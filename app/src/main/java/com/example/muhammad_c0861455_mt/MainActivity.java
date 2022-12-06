@@ -3,11 +3,13 @@ package com.example.muhammad_c0861455_mt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
@@ -23,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
     EditText TotalPayment;
     TextView NoOfDays;
     RadioButton LessThan20, Between20and60, Above60;
-    private int DriverAge;
+    CheckBox checkboxGPS, checkboxChildSeat, checkboxUnlimitedMileage;
+    private int DriverAge, dailyRent, totalAmount;
+
 
     String[] Cars = {"BMW", "AUDI", "CADILLAC", "VOLKS WAGON", "MERCEDES", "PEUGEOT"};
 
@@ -43,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         LessThan20 = (RadioButton) findViewById(R.id.LessThan20);
         Between20and60 = (RadioButton) findViewById(R.id.Between20and60);
         Above60 = (RadioButton) findViewById(R.id.Above60);
+        checkboxGPS = (CheckBox) findViewById(R.id.checkboxGPS);
+        checkboxChildSeat = (CheckBox) findViewById(R.id.checkboxChildSeat);
+        checkboxUnlimitedMileage = (CheckBox) findViewById(R.id.checkboxUnlimitedMileage);
 
 
         ArrayAdapter ad = new ArrayAdapter(
@@ -80,10 +87,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ViewDetailsButton.setOnClickListener(v -> {
+            Intent reportingIntent = new Intent(this, Reporting.class);
+            startActivityForResult(reportingIntent, 1, null);
+
+            if (LessThan20.isSelected()) {
+                int i = dailyRent + 5;
+            } else if (Between20and60.isSelected()) {
+
+            } else if (Above60.isSelected()) {
+                int i = dailyRent - 20;
+            }
+
+            if (checkboxGPS.isChecked()) {
+                int i = dailyRent + 5;
+            } else if (checkboxUnlimitedMileage.isChecked()) {
+                int i = dailyRent + 7;
+            } else if (checkboxUnlimitedMileage.isChecked()) {
+                int i = dailyRent + 1;
+            }
+
 
         });
-
-
 
 
     }
