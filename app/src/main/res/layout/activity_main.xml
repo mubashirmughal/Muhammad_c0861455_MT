@@ -18,12 +18,12 @@
 
 
     <TextView
-        android:id="@+id/quantityTv"
+        android:id="@+id/NoOfDays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="180dp"
-        android:text="How Many Days you want to rent?      #Days"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="175dp"
+        android:text="How Many Days you want to rent?     Days:1"
         android:textStyle="bold" />
 
     <SeekBar
@@ -47,17 +47,20 @@
             android:textSize="20dp" />
 
         <RadioButton
+            android:id="@+id/LessThan20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Less Than 20" />
 
         <RadioButton
+            android:id="@+id/Between20and60"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Between 21 and 60" />
 
         <RadioButton
+            android:id="@+id/Above60"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Above 60" />
@@ -98,7 +101,7 @@
         android:text="Amount" />
 
     <Button
-        android:id="@+id/orderButton"
+        android:id="@+id/ViewDetailsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="620dp"
