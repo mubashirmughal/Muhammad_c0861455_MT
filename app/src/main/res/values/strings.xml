@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Muhammad_c0861455_MT</string>
+
+    <string-array name="cars">
+        <item>BMW</item>
+        <item>AUDI</item>
+        <item>CADILLAC</item>
+        <item>VOLKS WAGON"</item>
+        <item>MERCEDES</item>
+        <item>PEUGEOT</item>
+    </string-array>
 </resources>

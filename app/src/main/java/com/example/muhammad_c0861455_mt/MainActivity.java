@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(ad);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 NoOfDays.setText("How Many Days you want to rent?     Days: " + String.valueOf(progress));
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         ViewDetailsButton.setOnClickListener(v -> {
             Intent reportingIntent = new Intent(this, Reporting.class);
             startActivityForResult(reportingIntent, 1, null);
+
 
             if (LessThan20.isSelected()) {
                 int i = dailyRent + 5;
